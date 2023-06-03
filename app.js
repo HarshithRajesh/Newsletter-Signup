@@ -1,7 +1,8 @@
 //jshint eversion : 6
 require("dotenv").config();
 
-API_ID= process.env.API_ID;
+API_ID = process.env.API_ID;
+LIST_ID = process.env.LIST_ID;
 
 
 const express = require("express");
@@ -39,10 +40,10 @@ app.post("/",function(req,res){
     };
 
     const jsonData = JSON.stringify(data);
-    const url = 'https://us14.api.mailchimp.com/3.0/lists/819a27c2b2';
+    const url = "https://us14.api.mailchimp.com/3.0/lists/"+LIST_ID;
     const option = {
         method:"POST",
-        auth:"harsh:ba4bb86d3652619b944a65c71a2e06c1-us14"
+        auth:"harsh:"+API_ID,
     }
 
 
